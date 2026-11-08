@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webtop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="https://www.google.com/" class="taskbarApps">
+            <img src="src/google.png">
+        </a>
+        <a href="https://github.com/" class="taskbarApps">
+            <img src="src/github.png">
+        </a>
+        <a href="https://discord.com/" class="taskbarApps">
+            <img src="src/discord.png">
+        </a>
+        <button class="taskbarApps"> 
+            <img src="src/konsole.png" id="credits">
+        </button>
+        <div class="creditsToggle hidden" > <!--line 19 is the toggle button for the credits, this div is what IS toggled-->
+            <h4>Code and design by jacob rinaldi</h4>
+            <h5><a href="https://github.com/jacobrinaldi">github</a></h5>
+            <button id="creditsRemove"></button>
+        </div>
+        <div class="desktop">
+            <button id="iconAi" class="desktopIcon">
+                <img src="src/folder.png">
+                <span>AI</span>
+            </button>
+            <button id="iconShopping" class="desktopIcon">
+                <img src="src/folder.png">
+                <span>Shopping</span>
+            </button>
+        </div>
+         <div class="aiFolder folder hidden">
+        <a href="https://chatgpt.com/">
+            <img src="src/chatgpt.png">
+        </a>
+        <button id="aiRemove"></button>
+        <a href="https://claude.ai">
+            <img src="src/claude.png">
+        </a>
+        <a href="https://gemini.google.com/app">
+            <img src="src/gem.png">
+        </a>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

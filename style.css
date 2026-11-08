@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-image: url("src/projectwallpaper.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 100vh;
+    padding-bottom: 10px;
+}
+
+/* Taskbar icons */
+.taskbarApps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.taskbarApps img {
+    width: 75px;
+    height: 75px;
+    padding: 7.5px;
+    object-fit: contain;
+}
+
+.taskbarApps:hover {
+    transform: translateY(-7.5px);
+}
+
+button.taskbarApps {
+    padding: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Beta ai styling (currently hate myself for using ai for styling will be changed in the future)*/
+/* Translucent Konsole-style window */
+.creditsToggle {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    width: min(520px, calc(100vw - 32px));
+    overflow: hidden;
+
+    color: #eff0f1;
+    background: rgba(24, 26, 32, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
+
+    font-family: "Noto Sans", Arial, sans-serif;
+    backdrop-filter: blur(18px) saturate(135%);
+    -webkit-backdrop-filter: blur(18px) saturate(135%);
+}
+
+/* Konsole title bar */
+.creditsToggle::before {
+    content: "Console";
+    display: block;
+    padding: 10px 14px;
+
+    color: #eff0f1;
+    background: rgba(49, 54, 59, 0.88);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Terminal content */
+.creditsToggle h4,
+.creditsToggle h5 {
+    padding-right: 20px;
+    padding-left: 20px;
+    font-family: "Noto Sans Mono", "Liberation Mono", monospace;
+    font-weight: normal;
+}
+
+.creditsToggle h4 {
+    padding-top: 20px;
+    color: #eff0f1;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.creditsToggle h4::before {
+    content: "liveuser@webtop:~$ ";
+    color: #8ae234;
+}
+
+.creditsToggle h5 {
+    padding-top: 8px;
+    padding-bottom: 20px;
+    font-size: 14px;
+}
+
+.creditsToggle h5::before {
+    content: "liveuser@webtop:~$ ";
+    color: #8ae234;
+}
+
+.creditsToggle h5 a {
+    color: #729fcf;
+    text-decoration: none;
+}
+
+.creditsToggle h5 a:hover {
+    color: #adceff;
+    text-decoration: underline;
+}
+
+/* Keep this after .creditsToggle so it hides the panel on page load */
+.hidden {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .taskbarApps img {
+        width: 62px;
+        height: 62px;
+    }
+
+    .creditsToggle {
+        width: calc(100vw - 24px);
+    }
+}
+
+.creditsToggle {
+    position: fixed; /* keep your existing centering */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* keep your other panel styles */
+}
+
+.creditsToggle {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* keep your other panel styles */
+}
+
+#creditsRemove {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    left: auto;
+
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border: 1px solid #c0392b;
+    border-radius: 50%;
+    background: #ff5f57;
+    cursor: pointer;
+}
+
+.desktop {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 12px;
+    width: 240px;
+}
+
+.desktopIcon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+
+    width: 72px;
+    padding: 8px;
+    color: white;
+    background: transparent;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    transition: ease-in-out;
+    transition-duration: 0.3s;
+}
+
+.desktopIcon img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.desktopIcon span {
+    max-width: 100%;
+    text-align: center;
+    font-size: 14px;
+    text-shadow: 0 1px 3px black;
+}
+
+button.dekstopIcon {
+     padding: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.desktopIcon:hover {
+    transform: translateY(-7.5px);
+}
+
+.folder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.folder img {
+    width: 75px;
+    height: 75px;
+    padding: 7.5px;
+    object-fit: contain;
+}
+
+.aiFolder {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.aiFolder {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: min(600px, calc(100vw - 32px));
+    min-height: 360px;
+    padding: 56px 24px 24px;
+
+    background: rgba(245, 245, 247, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.35);
+
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+}
+
+#aiRemove {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+
+    width: 13px;
+    height: 13px;
+    padding: 0;
+
+    background: #ff5f57;
+    border: 1px solid #c0392b;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#aiRemove:hover {
+    background: #ff7b73;
+}
+
+.aiFolder a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aiFolder img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    transition: ease-in-out;
+    transition-duration: 0.3s;
+}
+
+.aiFolder img:hover {
+    transform: translateY(-7.5px);
+}
+
+.aiFolder.hidden {
+    display: none !important;
+}
